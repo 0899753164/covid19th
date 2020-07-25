@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" href="<?php echo base_url()?>asset/css/bootstrap.min.css" />
 	<script src="<?php echo base_url('asset/js/bootstrap.js'); ?>"></script>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>COVID-19 TH</title>
 
 	<style type="text/css">
 
