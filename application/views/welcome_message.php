@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="<?php echo base_url()?>asset/css/bootstrap.min.css" />
+	<script src="<?php echo base_url('asset/js/bootstrap.js'); ?>"></script>
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
 
@@ -16,38 +18,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		margin: 40px;
 		font: 13px/20px normal Helvetica, Arial, sans-serif;
 		color: #4F5155;
+		font-family: 'supermarket';
 	}
+	@font-face {
+    font-family: 'supermarket';
+    src: url('asset/font/supermarket.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
 
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
 
 	h1 {
 		color: #444;
 		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
 		font-size: 19px;
 		font-weight: normal;
 		margin: 0 0 14px 0;
 		padding: 14px 15px 10px 15px;
 	}
 
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
 
-	#body {
+	/*#body {
 		margin: 0 15px 0 15px;
-	}
+	}*/
 
 	p.footer {
 		text-align: right;
@@ -66,23 +59,83 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
+<?php
+	
+	date_default_timezone_set('Asia/Bangkok'); # add your city to set local time zone
+    $datetime = date('d-m-Y H:i');
+    @$latest ='อัพเดทข้อมูลล่าสุด';
 
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+ 	@$refer ='ขอบคุณ Data จากกรมควบคุมโรค กระทรวงสาธารณะสุข';
+ ?>
+<div id="">
+	<div class="row col-lg-12">
+		<div class="col-lg-6">
+			<h1>ภาพรวม โรคระบาดโควิท-19 COVID-19 Tracking</h1>
+		</div>
+		<div class="col-lg-6 d-flex justify-content-end">
+			<h1><?php echo $latest. "&nbsp;&nbsp;" .$datetime; ?></h1>
+		</div>
+		
+	</div>
+	
 
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+		<div class="row">
+			<div class="card col-lg-8 bg-danger" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title"><?php //echo $datetime; ?></h5>
+					<h3 class="card-subtitle mb-2 d-flex justify-content-center text-white">เสียชีวิตสะสม</h3>
+					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['Deaths']; ?></h4>
+				</div>
+			</div>
+			<div class="card col-lg-4 bg-secondary" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title"><?php //echo $datetime; ?></h5>
+					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">เสียชีวิตล่าสุด</h3>
+					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['NewDeaths']; ?></h4>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-lg-3 mb-lg-3">
+			<div class="card col-lg-4 bg-warning" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title"><?php //echo $datetime; ?></h5>
+					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">ยืนยันผู้ป่วยใหม่</h3>
+					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['NewConfirmed']; ?></h4>
+				</div>
+			</div>
+			<div class="card col-lg-4" style="">
+				<div class="card-body bg-primary">
+					<h5 class="card-title"><?php //echo $datetime; ?></h5>
+					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">รักษาตัวอยู่ใน รพ.</h3>
+					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['Hospitalized']; ?></h4>
+				</div>
+			</div>
+			<div class="card col-lg-4" style="width: 18rem;">
+				<div class="card-body bg-info">
+					<h5 class="card-title"><?php //echo $datetime; ?></h5>
+					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">เข้ารับการรักษาล่าสุด</h3>
+					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['NewHospitalized']; ?></h4>
+				</div>
+			</div>
+			
+			</div>
+			
+		</div>
+		<div class="row mt-lg-3 mb-lg-3">
+			
+			<div class="card col-lg-12" style="width: 18rem;">
+				<div class="card-body bg-success">
+					<h5 class="card-title"><?php //echo $datetime; ?></h5>
+					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">ยืนยันรักษาหายรายใหม่</h3>
+					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['NewRecovered']; ?></h4>
+				</div>
+			
+		</div>
+		
 	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+	<p class="footer"><?php echo '<strong>' . @$refer . '</strong>' ?> <a href="https://covid19.th-stat.com/th/api">https://covid19.th-stat.com/th/api</a></p>
 </div>
 
 </body>
