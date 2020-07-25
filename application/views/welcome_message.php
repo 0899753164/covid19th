@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="<?php echo base_url()?> asset/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<?php echo base_url()?>asset/css/bootstrap.min.css" />
 	<script src="<?php echo base_url('asset/js/bootstrap.js'); ?>"></script>
 	<meta charset="utf-8">
 	<title>Welcome to CodeIgniter</title>
