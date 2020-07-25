@@ -81,14 +81,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div id="body">
 		<div class="row">
-			<div class="card col-lg-8 bg-danger" style="width: 18rem;">
+			<div class="card col-sm-6 col-md-6 col-lg-8 bg-danger" style="width: 18rem;">
 				<div class="card-body">
 					<h5 class="card-title"><?php //echo $datetime; ?></h5>
 					<h3 class="card-subtitle mb-2 d-flex justify-content-center text-white">เสียชีวิตสะสม</h3>
 					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['Deaths']; ?></h4>
 				</div>
 			</div>
-			<div class="card col-lg-4 bg-secondary" style="width: 18rem;">
+			<div class="card col-sm-6 col-md-6 col-lg-4 bg-secondary" style="width: 18rem;">
 				<div class="card-body">
 					<h5 class="card-title"><?php //echo $datetime; ?></h5>
 					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">เสียชีวิตล่าสุด</h3>
@@ -97,21 +97,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		<div class="row mt-lg-3 mb-lg-3">
-			<div class="card col-lg-4 bg-warning" style="width: 18rem;">
+			<div class="card col-sm-4 col-md-4 col-lg-4 bg-warning" style="width: 18rem;">
 				<div class="card-body">
 					<h5 class="card-title"><?php //echo $datetime; ?></h5>
 					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">ยืนยันผู้ป่วยใหม่</h3>
 					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['NewConfirmed']; ?></h4>
 				</div>
 			</div>
-			<div class="card col-lg-4" style="">
+			<div class="card col-sm-4 col-md-4 col-lg-4" style="">
 				<div class="card-body bg-primary">
 					<h5 class="card-title"><?php //echo $datetime; ?></h5>
 					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">รักษาตัวอยู่ใน รพ.</h3>
 					<h4 class="card-text d-flex justify-content-center text-white"><?php echo $res['Hospitalized']; ?></h4>
 				</div>
 			</div>
-			<div class="card col-lg-4" style="width: 18rem;">
+			<div class="card col-sm-4 col-md-4 col-lg-4" style="width: 18rem;">
 				<div class="card-body bg-info">
 					<h5 class="card-title"><?php //echo $datetime; ?></h5>
 					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">เข้ารับการรักษาล่าสุด</h3>
@@ -124,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 		<div class="row mt-lg-3 mb-lg-3">
 			
-			<div class="card col-lg-12" style="width: 18rem;">
+			<div class="card col-sm-12 col-md-12 col-lg-12" style="width: 18rem;">
 				<div class="card-body bg-success">
 					<h5 class="card-title"><?php //echo $datetime; ?></h5>
 					<h3 class="card-subtitle mb-2 text-white d-flex justify-content-center">ยืนยันรักษาหายรายใหม่</h3>
